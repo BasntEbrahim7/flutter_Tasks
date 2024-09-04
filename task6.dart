@@ -2,12 +2,31 @@ import 'package:flutter/material.dart';
 void main(){
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Scaffold(
+    home:import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
       appBar: AppBar(
         backgroundColor:  Color(0xFFC35DF1),
         actions: [
           IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back),color: Colors.white70,),
-          SizedBox(width: 260,),
+          Spacer(),
           IconButton(onPressed: (){}, icon: Icon(Icons.list),color: Colors.white70,)
         ],
 
@@ -33,21 +52,25 @@ void main(){
 
         Center(child:
         Container(
-            width: 350,
-            height: 140,
+          width: 350,
+          height: 140,
           decoration:   BoxDecoration(borderRadius: BorderRadius.circular(20),color: Color(0xFF7FBAF1),),
           child: Row(children: [SizedBox(width: 15,),
             Column(children: [
-            SizedBox(height: 20,),
-              Image.asset("test/images/1.png",scale: 22,)
+              SizedBox(height: 20,),
+              CircleAvatar(
+                radius: 30,  // The size of the avatar
+                backgroundImage: AssetImage('test/images/1.png'),  // Use an image from assets
+                backgroundColor: Colors.transparent,  // Optional: If the image doesn't cover the whole circle
+              )
 
-          ],),
+            ],),
 
             // SizedBox(width: 10,),
 
 
-          Column(children: [
-            SizedBox(height: 25,),
+            Column(children: [
+              SizedBox(height: 25,),
               Text('Monica Borg \nTitle:Flying Wings',style: TextStyle(color:  Colors.white),),
               SizedBox(height: 20,),
               Row(children: [
@@ -64,30 +87,34 @@ void main(){
 
             ],),
             SizedBox(width: 50,),
-          Column(children: [
-            // SizedBox(height: ,),
-            IconButton(onPressed: (){}, icon: Icon(Icons.more_horiz,color: Colors.white,size: 35,)),
-            SizedBox(height: 3,),
-            Text("1",style: TextStyle(color: Colors.white,fontSize: 20),),
-      // SizedBox(height: 5,),
-            Text("Ranking",style: TextStyle(color: Colors.white,fontSize: 10),)
+            Column(children: [
+              // SizedBox(height: ,),
+              IconButton(onPressed: (){}, icon: Icon(Icons.more_horiz,color: Colors.white,size: 35,)),
+              SizedBox(height: 3,),
+              Text("1",style: TextStyle(color: Colors.white,fontSize: 20),),
+              // SizedBox(height: 5,),
+              Text("Ranking",style: TextStyle(color: Colors.white,fontSize: 10),)
 
 
-          ],)],
+            ],)],
           )
           ,)
-          
+
         ),
-          SizedBox(height:20 ,)
+        SizedBox(height:20 ,)
         ,Center(child:
         Container(
-          width: 350,
-          height: 140,
-          decoration:   BoxDecoration(borderRadius: BorderRadius.circular(20),color: Color(0xFFF0AC62),),
+            width: 350,
+            height: 140,
+            decoration:   BoxDecoration(borderRadius: BorderRadius.circular(20),color: Color(0xFFF0AC62),),
             child: Row(children: [SizedBox(width: 15,),
               Column(children: [
                 SizedBox(height: 20,),
-                Image.asset("test/images/6.png",scale: 20,)
+                CircleAvatar(
+                  radius: 30,  // The size of the avatar
+                  backgroundImage: AssetImage('test/images/6.png'),  // Use an image from assets
+                  backgroundColor: Colors.transparent,  // Optional: If the image doesn't cover the whole circle
+                )
 
               ],),
 
@@ -125,16 +152,23 @@ void main(){
             )
 
         ),
-          ),SizedBox(height:20 ,)
+        ),SizedBox(height:20 ,)
         ,Center(child:
         Container(
-          width: 350,
-          height: 140,
-          decoration:   BoxDecoration(borderRadius: BorderRadius.circular(20),color: Color(0xFFEA648B),),
+            width: 350,
+            height: 140,
+            decoration:   BoxDecoration(borderRadius: BorderRadius.circular(20),color: Color(0xFFEA648B),),
             child: Row(children: [SizedBox(width: 15,),
               Column(children: [
                 SizedBox(height: 20,),
-                Image.asset("test/images/3.png",scale: 5,)
+                CircleAvatar(
+                  radius: 30,  // The size of the avatar
+                  backgroundImage: AssetImage('test/images/3.png'),  // Use an image from assets
+                  backgroundColor: Colors.transparent,  // Optional: If the image doesn't cover the whole circle
+                )
+
+
+                // Image.asset("test/images/3.png",scale: 5,)
 
               ],),
 
@@ -174,13 +208,19 @@ void main(){
         ),SizedBox(height:20 ,),
         Center(child:
         Container(
-          width: 350,
-          height: 140,
-          decoration:   BoxDecoration(borderRadius: BorderRadius.circular(20),color: Color(0xFFBD79F1),),
+            width: 350,
+            height: 140,
+            decoration:   BoxDecoration(borderRadius: BorderRadius.circular(20),color: Color(0xFFBD79F1),),
             child: Row(children: [SizedBox(width: 15,),
               Column(children: [
                 SizedBox(height: 20,),
-                Image.asset("test/images/final-1.png",scale: 5,)
+                CircleAvatar(
+                  radius: 30,  // The size of the avatar
+                  backgroundImage: AssetImage('test/images/final-1.png'),  // Use an image from assets
+                  backgroundColor: Colors.transparent,  // Optional: If the image doesn't cover the whole circle
+                )
+
+                // Image.asset("test/images/final-1.png",scale: 5,)
 
               ],),
 
@@ -219,10 +259,10 @@ void main(){
         ),
         )
 
-      ,],
+        ,],
       ) ,
 
-    ),
+    );}
 
-  ));
-}
+
+  }
