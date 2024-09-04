@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: Scaffold(
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
         actions: [
@@ -88,7 +102,7 @@ void main() {
 
                   borderRadius: BorderRadius.circular(25),
                 ),
-                
+
 
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,  // Evenly space items
@@ -268,8 +282,4 @@ void main() {
           ),
         ),
       ),
-    ),
-  ));
-}
-// Added for spacing
-              // Other containers...
+  );}}
